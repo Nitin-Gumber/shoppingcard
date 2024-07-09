@@ -18,7 +18,7 @@ function Product({ post }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between border rounded-lg gap-3 p-4 mt-10 ml-5">
+    <div className="flex flex-col items-center justify-between border rounded-lg gap-3 p-4 mt-10">
       <h2 className="text-gray-700 font-semibold text-lg text-left truncate w-48 mt-1">
         {post.title}
       </h2>
@@ -26,7 +26,7 @@ function Product({ post }) {
         {post.description.split(" ").slice(0, 10).join(" ") + "..."}
       </p>
       <div className="h-[180px]">
-        <img src={post.image} alt={post.title} className="w-full h-full" />
+        <img src={post.image} alt={post.title} loading="lazy" className="w-full h-full" />
       </div>
       <div className="flex justify-between items-center gap-x-12 mt-5">
         <div>
