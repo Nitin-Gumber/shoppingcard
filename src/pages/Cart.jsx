@@ -2,12 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CartItem from "../components/CartItem";
+import { useMemo } from "react";
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
   const [totalAmount, setTotalAmount] = useState(0);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
+  // }, [cart]);
+
+  // using useMemo hook
+  useMemo(() => {
     setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
   }, [cart]);
 
